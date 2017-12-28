@@ -1,0 +1,136 @@
+<!--
+  Generated template for the ProcessPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 [ngClass]="{'active-header' : currentIndex == 0 }" >Product Source</ion-col>
+      <ion-col col-3 [ngClass]="{'active-header' : currentIndex == 1 }" >Code Scanner</ion-col>
+      <ion-col col-3 [ngClass]="{'active-header' : currentIndex == 2 }" >Validate Packaging</ion-col>
+      <ion-col col-3 [ngClass]="{'active-header' : currentIndex == 3 }" >Complete Validation</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-toolbar *ngIf="view == '2.3'">
+      <button ion-button icon-only left clear (click)="changeView('2.1')">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+    <ion-title>
+      <span *ngIf="packageType == '5mg'">Cialis 5mg Package Authentication Guide</span>
+      <span *ngIf="packageType == '20mg'">Cialis 20mg Package Authentication Guide</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-slides (ionSlideDidChange)="slideChanged()">
+      <ion-slide >
+          <ion-list radio-group [(ngModel)]="purchaseFrom" >
+              <ion-list-header>
+                  Cialis purchased from :
+              </ion-list-header>
+            
+              <ion-item>
+                <ion-label text-wrap>Hospital</ion-label>
+                <ion-radio checked="true" value="HOSPITAL" item-left></ion-radio>
+              </ion-item>
+              <ion-item *ngIf="purchaseFrom == 'HOSPITAL'">
+                <ion-label stacked>Please enter the name of the establishment (optional)</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            
+              <ion-item>
+                <ion-label text-wrap>Pharmacy</ion-label>
+                <ion-radio value="PHARMACY" item-left></ion-radio>
+              </ion-item>
+              <ion-item *ngIf="purchaseFrom == 'PHARMACY'">
+                <ion-label stacked>Please enter the name of the establishment (optional)</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            
+              <ion-item>
+                <ion-label text-wrap>Other</ion-label>
+                <ion-radio value="OTHER" item-left></ion-radio>
+              </ion-item>
+              <ion-item *ngIf="purchaseFrom == 'OTHER'">
+                <ion-label stacked>Please enter the name of the establishment (optional)</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        <button ion-button (click)="nextSlide()" round block [disabled]="purchaseFrom == ''">
+            Notice! <br>
+            Cialis is not distributed and sold in online shops. </button>
+      </ion-slide>
+    
+      <ion-slide >
+        <section *ngIf="view == '1.1'">
+            <h2>Slide 2</h2>
+            <button ion-button (click)="changeView('1.2')"></button>
+        </section>        
+        <section *ngIf="view == '1.2'">
+            <alert-view [text]="'One moment…<br>System Validation In Progress…'" [buttonText]="'ok'" (buttonClick)="showBarcodeRes()"></alert-view>
+        </section>
+        <section *ngIf="view == '1.3'">
+            <alert-view [text]="resText" [buttonText]="'OK'" (buttonClick)="nextSlide()"></alert-view>
+        </section>
+      </ion-slide>
+    
+      <ion-slide >
+        <section *ngIf="view == '2.1'">
+            <ion-list radio-group [(ngModel)]="packageType" >
+                <ion-list-header>
+                    Choose the type of Cialis packaging for further validation:
+                </ion-list-header>
+                <ion-item>
+                  <ion-label text-wrap>Cialis 5mg</ion-label>
+                  <ion-radio value="5mg" item-left></ion-radio>
+                </ion-item>            
+                <ion-item>
+                  <ion-label text-wrap>Cialis 20mg</ion-label>
+                  <ion-radio value="20mg" item-left></ion-radio>
+                </ion-item>
+              </ion-list>
+            <button ion-button (click)="changeView('2.2')"> Next </button>
+        </section>
+        <section *ngIf="view == '2.2'">
+            <alert-view [text]="'Please follow the product validation image guide presented to verify the packaging.'" [buttonText]="'OK'" (buttonClick)="changeView('2.3')"></alert-view>
+        </section>
+        <section *ngIf="view == '2.3'">
+            <img  *ngIf="packageType == '5mg'" src="assets/imgs/pill5.png">
+            <img  *ngIf="packageType == '20mg'" src="assets/imgs/pill20.png">
+            <button ion-button (click)="changeView('2.4')" round block >Notice! Cialis do not sell nor distribute online.</button>
+        </section>
+        <section *ngIf="view == '2.4'">
+            <ion-list radio-group [(ngModel)]="verificationResult" >
+                <ion-list-header>
+                    Package verification result: 
+                </ion-list-header>
+                <ion-item>
+                  <ion-label text-wrap>All checkpoint passed</ion-label>
+                  <ion-radio value="ALL" item-left></ion-radio>
+                </ion-item>            
+                <ion-item>
+                  <ion-label text-wrap>Some didn’t match correctly </ion-label>
+                  <ion-radio value="SOME" item-left></ion-radio>
+                </ion-item>
+                <ion-item>
+                    <ion-label text-wrap>Not sure if the package validation matches the guide </ion-label>
+                    <ion-radio value="NOT_SURE" item-left></ion-radio>
+                  </ion-item>
+              </ion-list>
+            <button ion-button (click)="changeView('2.5')"> Next </button>
+        </section>
+        <section *ngIf="view == '2.5'">
+            <alert-view [text]="'Authentication Passed.!<br>Product is confirmed to be distributed by Lilly Taiwan.'" [buttonText]="'OK'" (buttonClick)="nextSlide()"></alert-view>
+        </section>
+      </ion-slide>
+
+      <ion-slide >
+          <alert-view [text]="'Validation details send for record keeping. '" [buttonText]="'Validate next product'" (buttonClick)="goToSlide(0)"></alert-view>
+      </ion-slide>
+    
+    </ion-slides>
+</ion-content>
