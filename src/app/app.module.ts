@@ -4,7 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 
-import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +17,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    LoginPage,
     TermsAndConditionsPage
   ],
   imports: [
@@ -36,16 +36,16 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    LoginPage,
     TermsAndConditionsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
     BarcodeProvider,
     BarcodeScanner
   ]
 })
-export class AppModule {}
+export class AppModule { }
