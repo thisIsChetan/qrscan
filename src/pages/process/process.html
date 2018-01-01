@@ -7,10 +7,10 @@
 <ion-header>
   <ion-grid>
     <ion-row>
-      <ion-col col-3 [ngClass]="{'active-header' : currentIndex == 0 }" >Product Source</ion-col>
-      <ion-col col-3 [ngClass]="{'active-header' : currentIndex == 1 }" >Code Scanner</ion-col>
-      <ion-col col-3 [ngClass]="{'active-header' : currentIndex == 2 }" >Validate Packaging</ion-col>
-      <ion-col col-3 [ngClass]="{'active-header' : currentIndex == 3 }" >Complete Validation</ion-col>
+      <ion-col col-3 class="index-4" [ngClass]="{'active-header' : currentIndex == 0 }" >Product Source</ion-col>
+      <ion-col col-3 class="index-3" [ngClass]="{'active-header' : currentIndex == 1 }" >Code Scanner</ion-col>
+      <ion-col col-3 class="index-2" [ngClass]="{'active-header' : currentIndex == 2 }" >Validate Packaging</ion-col>
+      <ion-col col-3 class="index-1" [ngClass]="{'active-header' : currentIndex == 3 }" >Complete Validation</ion-col>
     </ion-row>
   </ion-grid>
   <ion-toolbar *ngIf="view == '2.3'">
@@ -37,7 +37,7 @@
                 <ion-label text-wrap>Hospital</ion-label>
                 <ion-radio checked="true" value="HOSPITAL" item-left></ion-radio>
               </ion-item>
-              <ion-item *ngIf="purchaseFrom == 'HOSPITAL'">
+              <ion-item >
                 <ion-label stacked>Please enter the name of the establishment (optional)</ion-label>
                 <ion-input type="text"></ion-input>
               </ion-item>
@@ -46,7 +46,7 @@
                 <ion-label text-wrap>Pharmacy</ion-label>
                 <ion-radio value="PHARMACY" item-left></ion-radio>
               </ion-item>
-              <ion-item *ngIf="purchaseFrom == 'PHARMACY'">
+              <ion-item >
                 <ion-label stacked>Please enter the name of the establishment (optional)</ion-label>
                 <ion-input type="text"></ion-input>
               </ion-item>
@@ -55,12 +55,12 @@
                 <ion-label text-wrap>Other</ion-label>
                 <ion-radio value="OTHER" item-left></ion-radio>
               </ion-item>
-              <ion-item *ngIf="purchaseFrom == 'OTHER'">
+              <ion-item >
                 <ion-label stacked>Please enter the name of the establishment (optional)</ion-label>
                 <ion-input type="text"></ion-input>
               </ion-item>
             </ion-list>
-        <button ion-button (click)="nextSlide()" round block [disabled]="purchaseFrom == ''">
+        <button ion-button (click)="nextSlide()" round block >
             Notice! <br>
             Cialis is not distributed and sold in online shops. </button>
       </ion-slide>

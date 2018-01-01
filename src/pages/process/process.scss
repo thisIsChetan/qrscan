@@ -1,18 +1,62 @@
 page-process {
     ion-header{
-        border: 1px solid;
+        // border: 1px solid;
         height: 50px;
         ion-grid{
             margin: 0px !important;
             padding: 0px !important;
             height: 100%;
             ion-row{
+                .index-4{
+                    z-index: 4;   
+                    padding-left: 0px !important;
+                }
+                .index-3{
+                    z-index: 3;   
+                }
+                .index-2{
+                    z-index: 2;   
+                }
+                .index-1{
+                    z-index: 1;   
+                }
                 .active-header{
-                    background-color: grey; 
+                    background-color: #1abc9c; 
+                }
+                .active-header:after{
+                    border-left-color: #1abc9c;
                 }
                 height: 100%;
                 ion-col{
-                    border: 1px solid !important;
+                    // border: 1px solid !important;
+                    position: relative;
+                    background: #95a5a6;
+                    border: 2px solid #c2e1f5;
+                    padding-left: 22px !important;
+                    font-size: 12px;
+                }
+                ion-col:after, ion-col:before {
+                    left: 100%;
+                    top: 50%;
+                    border: solid transparent;
+                    content: " ";
+                    height: 0;
+                    width: 0;
+                    position: absolute;
+                    pointer-events: none;
+                }
+                
+                ion-col:after {
+                    border-color: rgba(136, 183, 213, 0);
+                    border-left-color: #95a5a6;
+                    border-width: 22px;
+                    margin-top: -22px;
+                }
+                ion-col:before {
+                    border-color: rgba(194, 225, 245, 0);
+                    border-left-color: #c2e1f5;
+                    border-width: 25px;
+                    margin-top: -25px;
                 }
             }
         }
