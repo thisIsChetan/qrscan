@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-let apiUrl='https://reqres.in/api/users';
+let apiUrl='https://buit-ibu-tw-cialis-id-dev.herokuapp.com/api/app_authentication?app_code';
 @Injectable()
 export class AuthServiceProvider {
   
@@ -24,7 +24,7 @@ export class AuthServiceProvider {
       let headers= new Headers();
       headers.append('Content-Type', 'application/json');
 
-      this.http.post(apiUrl,JSON.stringify(credentials),{ headers: headers })
+      this.http.post(apiUrl+credentials,JSON.stringify(credentials),{ headers: headers })
       .subscribe(res => {
         resolve(res.json());
       }, (err) => {
