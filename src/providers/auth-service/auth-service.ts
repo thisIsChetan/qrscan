@@ -10,6 +10,7 @@ import 'rxjs/add/operator/map';
   and Angular DI.
 */
 let apiUrl='https://buit-ibu-tw-cialis-id-dev.herokuapp.com/api/app_authentication/';
+
 @Injectable()
 export class AuthServiceProvider {
   
@@ -24,7 +25,7 @@ export class AuthServiceProvider {
       let headers= new Headers();
       headers.append('Content-Type', 'application/json');
 
-      this.http.post(apiUrl,JSON.stringify(credentials),{ headers: headers })
+      this.http.post(apiUrl+credentials,JSON.stringify(credentials),{ headers: headers })
       .subscribe(res => {
         resolve(res.json());
       }, (err) => {
