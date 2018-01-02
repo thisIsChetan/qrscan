@@ -42,10 +42,10 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
     BarcodeProvider,
     BarcodeScanner
   ]
 })
-export class AppModule {}
+export class AppModule { }
