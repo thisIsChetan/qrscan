@@ -19,6 +19,10 @@ export class ProcessPage {
   purchaseFrom:string = '';
   isImage: boolean = false;  
   view:string;
+  radioValue:string="hospital";
+  clickUrl="assets/imgs/redio-button-click.png";
+  unClickUrl="assets/imgs/redio-button-unclick.png";
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, private barcode: BarcodeProvider) {
   }
 
@@ -27,6 +31,9 @@ export class ProcessPage {
     this.slides.lockSwipes(true);
   }
 
+  radioBtn(value){
+    this.radioValue=value;
+  }
   goToSlide(slide) {
     this.slides.lockSwipes(false);
     this.slides.slideTo(slide, 500);

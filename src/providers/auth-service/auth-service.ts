@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-let apiUrl='https://reqres.in/api/users';
+let apiUrl='https://buit-ibu-tw-cialis-id-dev.herokuapp.com/api/app_authentication/';
 @Injectable()
 export class AuthServiceProvider {
   
