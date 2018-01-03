@@ -11,11 +11,11 @@
       <div class="progessImg">
         <img [src]="this.images.src[currentIndex]">
       </div>
-      </ion-row>
+    </ion-row>
 
-      <ion-row>
+    <ion-row>
       <ion-col col-3 class="index-4" [ngClass]="{'active-header' : currentIndex == 0 }">
-        proress
+        Product Source
       </ion-col>
       <ion-col col-3 class="index-3" [ngClass]="{'active-header' : currentIndex == 1 }">Code Scanner</ion-col>
       <ion-col col-3 class="index-2" [ngClass]="{'active-header' : currentIndex == 2 }">Validate Packaging</ion-col>
@@ -44,8 +44,10 @@
         <ion-grid>
           <ion-row>
             <ion-col col-1>
-              <img [src]="clickUrl" *ngIf="radioValue !== 'hospital'" (click)="radioBtn('hospital')">
-              <img [src]="unClickUrl" *ngIf="radioValue == 'hospital'" (click)="radioBtn('hospital')">
+              <div class="btnRadio">
+                <img [src]="clickUrl" *ngIf="radioValue !== 'hospital'" (click)="radioBtn('hospital')">
+                <img [src]="unClickUrl" *ngIf="radioValue == 'hospital'" (click)="radioBtn('hospital')">
+              </div>
             </ion-col>
             <ion-col col-4>
               <span>Hospital</span>
@@ -56,9 +58,10 @@
           </ion-row>
           <ion-row>
             <ion-col col-1>
-              <img [src]="clickUrl" *ngIf="radioValue !== 'pharmacy'" (click)="radioBtn('pharmacy')">
-              <img [src]="unClickUrl" *ngIf="radioValue == 'pharmacy'" (click)="radioBtn('pharmacy')">
-              <!-- <ion-radio value="PHARMACY" item-left></ion-radio> -->
+              <div class="btnRadio">
+                <img [src]="clickUrl" *ngIf="radioValue !== 'pharmacy'" (click)="radioBtn('pharmacy')">
+                <img [src]="unClickUrl" *ngIf="radioValue == 'pharmacy'" (click)="radioBtn('pharmacy')">
+              </div>
             </ion-col>
             <ion-col col-4>
               <span>Pharmacy</span>
@@ -69,9 +72,10 @@
           </ion-row>
           <ion-row>
             <ion-col col-1>
-              <img [src]="clickUrl" *ngIf="radioValue !== 'other'" (click)="radioBtn('other')">
-              <img [src]="unClickUrl" *ngIf="radioValue == 'other'" (click)="radioBtn('other')">
-              <!-- <ion-radio value="OTHER" item-left></ion-radio> -->
+              <div class="btnRadio">
+                <img [src]="clickUrl" *ngIf="radioValue !== 'other'" (click)="radioBtn('other')">
+                <img [src]="unClickUrl" *ngIf="radioValue == 'other'" (click)="radioBtn('other')">
+              </div>
             </ion-col>
             <ion-col col-4>
               <span>Other</span>
@@ -87,7 +91,7 @@
         <p> Notice!
           <br> Cialis is not distributed and sold in online shops.
         </p>
-        <img src="../../assets/imgs/button-bg.png">
+        <img src="assets/imgs/button-bg.png">
       </div>
     </ion-slide>
 
@@ -111,6 +115,10 @@
             Choose the type of Cialis packaging for further validation:
           </ion-list-header>
           <ion-item>
+              <!-- <div class="btnRadio">
+                  <img [src]="clickUrl" *ngIf="radioValue !== '5mg'" (click)="radioBtn('5mg')">
+                  <img [src]="unClickUrl" *ngIf="radioValue == '5mg'" (click)="radioBtn('5mg')">
+                </div> -->
             <ion-label text-wrap>Cialis 5mg</ion-label>
             <ion-radio value="5mg" item-left></ion-radio>
           </ion-item>
@@ -161,6 +169,10 @@
     </ion-slide>
 
   </ion-slides>
+
+  <div class="btnIcon" *ngIf="view == '2.1'">
+      <img src="assets/imgs/menu.png">
+    </div>
 </ion-content>
 
 <ion-footer no-border>

@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+
 
 /*
   Generated class for the BarcodeProvider provider.
@@ -11,27 +11,27 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 @Injectable()
 export class BarcodeProvider {
 
-  constructor(private barcodeScanner: BarcodeScanner) {
+  constructor() {
     console.log('Hello BarcodeProvider Provider');
   }
 
   showAlert(){
-    alert("Hello This is alert");
+    alert("Code is scanning");
   }
-  scan(){
-    return new Promise((resolve, reject)=>{
-      let options: BarcodeScannerOptions = {};
-      options.formats = "DATA_MATRIX"
-      this.barcodeScanner.scan(options).then((barcodeData) => {
-        console.log(barcodeData);
-        alert(barcodeData);
-        resolve(true);
-       }, (err) => {
-        console.log(err);
-        reject(err);
-       });
-    })
-  }
+  // scan(){
+  //   return new Promise((resolve, reject)=>{
+  //     let options: BarcodeScannerOptions = {};
+  //     options.formats = "DATA_MATRIX"
+  //     this.barcodeScanner.scan(options).then((barcodeData) => {
+  //       console.log(barcodeData);
+  //       alert(barcodeData);
+  //       resolve(true);
+  //      }, (err) => {
+  //       console.log(err);
+  //       reject(err);
+  //      });
+  //   })
+  // }
 
 
 }

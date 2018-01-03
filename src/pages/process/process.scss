@@ -31,7 +31,7 @@ page-process {
                    background: transparent;
                 }
                 .active-header:after{
-                   border-left-color: red;
+                //    border-left-color: red;
                 }
                 height: 100%;
                 ion-col{
@@ -89,6 +89,9 @@ page-process {
                 span{
                     color: white;
                 }
+                .btnRadio{
+                    width: 28px;
+                }
             }
         }
             .noticeBtn {
@@ -108,6 +111,12 @@ page-process {
                 color: white !important;    
             }
           
+        }
+        .btnIcon{
+            position: absolute;
+            top: 93%;
+            left: 86%;
+            width: 37px;
         }
     }
     ion-footer{

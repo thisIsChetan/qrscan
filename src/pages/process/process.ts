@@ -50,8 +50,8 @@ export class ProcessPage {
     let _currentIndex = this.slides.getActiveIndex();
     if(_currentIndex == 1){
       this.view = '1.1';
-      // this.barcode.showAlert();
-      this.showBarcode();
+      this.barcode.showAlert();
+      // this.showBarcode();
     }else if(_currentIndex == 2){
       this.view = "2.1";
     }else{
@@ -73,9 +73,10 @@ export class ProcessPage {
   //Slide 1
   resText:string;
   showBarcode(){
-    this.barcode.scan().then((res)=>{
-      this.changeView('1.2')
-    })
+    //for a timing committed by avinash
+    // this.barcode.scan().then((res)=>{
+    //   this.changeView('1.2')
+    // })
   }
   showBarcodeRes(){
     this.view = "1.3";

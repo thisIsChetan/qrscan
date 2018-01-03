@@ -25678,15 +25678,40 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+ion-content {
+  background: url("../assets/imgs/bg.png");
+  background-size: contain;
+}
+
 alert-view section {
-  border: 1px solid;
-  max-width: 70%;
+  background: url("../assets/imgs/popup-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: 97%;
   margin: auto;
   padding: 20px;
+  height: 270px;
+  position: relative;
+}
+
+alert-view section div {
+  color: white !important;
+}
+
+alert-view section .btn {
+  background: url("../assets/imgs/popup-button-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 75%;
+  right: 16%;
+  position: absolute;
+  width: 64%;
+  padding: 5px;
+  height: 146px;
 }
 
 page-login ion-content {
-  background: url("../../assets/imgs/bg.png");
+  background: url("../assets/imgs/bg.png");
   background-size: contain;
 }
 
@@ -25760,7 +25785,6 @@ page-login ion-footer {
 }
 
 page-process ion-header {
-  border: 1px solid;
   height: 50px;
 }
 
@@ -25771,13 +25795,117 @@ page-process ion-header ion-grid {
 }
 
 page-process ion-header ion-grid ion-row {
+  position: absolute;
+  top: 0px;
   height: 100%;
 }
 
+page-process ion-header ion-grid ion-row .index-4 {
+  z-index: 4;
+  padding-left: 0px !important;
+  top: 8px;
+}
+
+page-process ion-header ion-grid ion-row .index-4 .progessImg {
+  height: 200px;
+  width: 50%;
+}
+
+page-process ion-header ion-grid ion-row .index-3 {
+  z-index: 3;
+}
+
+page-process ion-header ion-grid ion-row .index-2 {
+  z-index: 2;
+}
+
+page-process ion-header ion-grid ion-row .index-1 {
+  z-index: 1;
+}
+
 page-process ion-header ion-grid ion-row .active-header {
-  background-color: grey;
+  background: transparent;
 }
 
 page-process ion-header ion-grid ion-row ion-col {
-  border: 1px solid !important;
+  color: white;
+  text-align: center;
+  position: relative;
+  padding-left: 22px !important;
+  font-size: 12px;
+}
+
+page-process ion-header ion-grid ion-row ion-col:after, page-process ion-header ion-grid ion-row ion-col:before {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+page-process ion-header ion-grid ion-row ion-col:after {
+  margin-top: -22px;
+}
+
+page-process ion-header ion-grid ion-row ion-col:before {
+  border-width: 25px;
+  margin-top: -25px;
+}
+
+page-process ion-content ion-slides ion-list-header {
+  background: transparent !important;
+  color: white !important;
+}
+
+page-process ion-content ion-slides .inputCol {
+  background: white !important;
+  padding: 0px !important;
+  border-radius: 5px;
+}
+
+page-process ion-content ion-slides ion-row {
+  margin: 5%;
+}
+
+page-process ion-content ion-slides ion-row ion-col span {
+  color: white;
+}
+
+page-process ion-content ion-slides ion-row ion-col .btnRadio {
+  width: 28px;
+}
+
+page-process ion-content ion-slides .noticeBtn {
+  position: relative;
+  background-size: contain;
+}
+
+page-process ion-content ion-slides .noticeBtn p {
+  position: absolute;
+  bottom: 0%;
+  height: 65%;
+  width: 100%;
+  color: white;
+  font-size: 13px;
+}
+
+page-process ion-content ion-slides ion-item {
+  background: transparent !important;
+  color: white !important;
+}
+
+page-process ion-content .btnIcon {
+  position: absolute;
+  top: 93%;
+  left: 86%;
+  width: 37px;
+}
+
+page-process ion-footer {
+  background: transparent !important;
+  font-size: 9px;
+  color: white;
 }

@@ -20,7 +20,9 @@ export class LoginPage {
   user: any;
   service:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider: AuthServiceProvider) {
+  constructor(public navCtrl: NavController,
+               public navParams: NavParams, 
+               public authServiceProvider: AuthServiceProvider) {
     console.log(authServiceProvider.http);
     this.user = {
       pass: ''
@@ -33,18 +35,19 @@ export class LoginPage {
   }
 
   navigateToProcess() {
+    this.navCtrl.push("ProcessPage");
     //this.navCtrl.push("ProcessPage");
-   this.service.isValid(this.user.pass).then(data => {
-     alert(data.status);
-    if(data){
-      if(data.status == "OK"){
-       this.navCtrl.push("ProcessPage");
-      }
-      else{
-        alert("Wrong Password");
-      }
-    }
-  })
+  //  this.service.isValid(this.user.pass).then(data => {
+  //    alert(data.status);
+  //   if(data){
+  //     if(data.status == "OK"){
+  //      this.navCtrl.push("ProcessPage");
+  //     }
+  //     else{
+  //       alert("Wrong Password");
+  //     }
+  //   }
+  // })
     
   }
 }
