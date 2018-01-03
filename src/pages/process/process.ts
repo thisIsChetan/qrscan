@@ -22,8 +22,12 @@ export class ProcessPage {
   radioValue:string="hospital";
   clickUrl="assets/imgs/redio-button-click.png";
   unClickUrl="assets/imgs/redio-button-unclick.png";
+  images={src:["assets/imgs/01-Step.png","assets/imgs/02-Step.png","assets/imgs/03-Step.png","assets/imgs/04-Step.png"]};
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, private barcode: BarcodeProvider) {
+  constructor(public navCtrl: NavController,
+             public navParams: NavParams,
+              private barcode: BarcodeProvider) {
+  console.log("images"+this.images.src[this.currentIndex]);
   }
 
   ionViewDidLoad() {
@@ -46,6 +50,7 @@ export class ProcessPage {
     let _currentIndex = this.slides.getActiveIndex();
     if(_currentIndex == 1){
       this.view = '1.1';
+      // this.barcode.showAlert();
       this.showBarcode();
     }else if(_currentIndex == 2){
       this.view = "2.1";

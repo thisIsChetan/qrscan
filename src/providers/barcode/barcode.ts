@@ -15,12 +15,16 @@ export class BarcodeProvider {
     console.log('Hello BarcodeProvider Provider');
   }
 
+  showAlert(){
+    alert("Hello This is alert");
+  }
   scan(){
     return new Promise((resolve, reject)=>{
       let options: BarcodeScannerOptions = {};
       options.formats = "DATA_MATRIX"
       this.barcodeScanner.scan(options).then((barcodeData) => {
         console.log(barcodeData);
+        alert(barcodeData);
         resolve(true);
        }, (err) => {
         console.log(err);

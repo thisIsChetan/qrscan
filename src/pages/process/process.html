@@ -6,8 +6,17 @@
 -->
 <ion-header>
   <ion-grid>
+
     <ion-row>
-      <ion-col col-3 class="index-4" [ngClass]="{'active-header' : currentIndex == 0 }">Product Source</ion-col>
+      <div class="progessImg">
+        <img [src]="this.images.src[currentIndex]">
+      </div>
+      </ion-row>
+
+      <ion-row>
+      <ion-col col-3 class="index-4" [ngClass]="{'active-header' : currentIndex == 0 }">
+        proress
+      </ion-col>
       <ion-col col-3 class="index-3" [ngClass]="{'active-header' : currentIndex == 1 }">Code Scanner</ion-col>
       <ion-col col-3 class="index-2" [ngClass]="{'active-header' : currentIndex == 2 }">Validate Packaging</ion-col>
       <ion-col col-3 class="index-1" [ngClass]="{'active-header' : currentIndex == 3 }">Complete Validation</ion-col>
@@ -47,8 +56,8 @@
           </ion-row>
           <ion-row>
             <ion-col col-1>
-                <img [src]="clickUrl" *ngIf="radioValue !== 'pharmacy'" (click)="radioBtn('pharmacy')">
-                <img [src]="unClickUrl" *ngIf="radioValue == 'pharmacy'" (click)="radioBtn('pharmacy')">
+              <img [src]="clickUrl" *ngIf="radioValue !== 'pharmacy'" (click)="radioBtn('pharmacy')">
+              <img [src]="unClickUrl" *ngIf="radioValue == 'pharmacy'" (click)="radioBtn('pharmacy')">
               <!-- <ion-radio value="PHARMACY" item-left></ion-radio> -->
             </ion-col>
             <ion-col col-4>
@@ -60,11 +69,11 @@
           </ion-row>
           <ion-row>
             <ion-col col-1>
-                <img [src]="clickUrl" *ngIf="radioValue !== 'other'" (click)="radioBtn('other')">
-                <img [src]="unClickUrl" *ngIf="radioValue == 'other'" (click)="radioBtn('other')">
+              <img [src]="clickUrl" *ngIf="radioValue !== 'other'" (click)="radioBtn('other')">
+              <img [src]="unClickUrl" *ngIf="radioValue == 'other'" (click)="radioBtn('other')">
               <!-- <ion-radio value="OTHER" item-left></ion-radio> -->
-              </ion-col>
-              <ion-col col-4>
+            </ion-col>
+            <ion-col col-4>
               <span>Other</span>
             </ion-col>
             <ion-col class="inputCol">
