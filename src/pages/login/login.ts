@@ -33,14 +33,18 @@ export class LoginPage {
   }
 
   navigateToProcess() {
-    
-    this.navCtrl.push("ProcessPage");
-  //  this.service.isValid(this.user.pass).then(data => {
-  //    if(data){
-  //     console.log(this.apiUrl+this.user.pass);
-  //   // this.navCtrl.push("ProcessPage");
-  //    }
-  // })
+    //this.navCtrl.push("ProcessPage");
+   this.service.isValid(this.user.pass).then(data => {
+     alert(data.status);
+    if(data){
+      if(data.status == "OK"){
+       this.navCtrl.push("ProcessPage");
+      }
+      else{
+        alert("Wrong Password");
+      }
+    }
+  })
     
   }
 }

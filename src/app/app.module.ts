@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Camera } from '@ionic-native/camera';
 import { HttpModule } from '@angular/http';
 
 import { LoginPage } from '../pages/login/login';
@@ -44,6 +45,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthServiceProvider,
+    Camera,
     BarcodeProvider,
     BarcodeScanner
   ]
