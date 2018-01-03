@@ -7,8 +7,8 @@ import 'rxjs/add/operator/map';
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
+let apiUrl='https://buit-ibu-tw-cialis-id-dev.herokuapp.com/api/app_authentication/';
 
-let apiUrl='https://buit-ibu-tw-cialis-id-dev.herokuapp.com/api/app_authentication';
 @Injectable()
 export class AuthServiceProvider {
   
@@ -19,7 +19,6 @@ export class AuthServiceProvider {
   isValid(credentials){
     return new Promise((resolve,reject) => {
       // let headers= new Headers();
-
       // headers.append('Content-Type', 'application/json');
       // headers.append("Accept", 'application/json');
       // headers.append('Access-Control-Allow-Origin', '*');
@@ -33,6 +32,7 @@ export class AuthServiceProvider {
       });
 
       this.http.post(apiUrl, data)
+      //this.http.post(apiUrl+credentials,JSON.stringify(credentials),{ headers: headers })
       .subscribe(res => {
         console.log(res.json());
         resolve(res.json());
