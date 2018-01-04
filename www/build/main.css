@@ -25684,13 +25684,14 @@ ion-content {
 }
 
 alert-view section {
-  background: url("../assets/imgs/popup-bg.png");
+  background: url(../assets/imgs/popup-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
-  max-width: 97%;
+  max-width: 90%;
   margin: auto;
-  padding: 20px;
-  height: 270px;
+  padding: 22px;
+  height: auto;
+  min-height: 265px;
   position: relative;
 }
 
@@ -25699,15 +25700,16 @@ alert-view section div {
 }
 
 alert-view section .btn {
-  background: url("../assets/imgs/popup-button-bg.png");
+  background: url(../assets/imgs/popup-button-bg.png);
   background-size: contain;
   background-repeat: no-repeat;
-  top: 75%;
+  /* top: 75%; */
+  bottom: 60px;
   right: 16%;
   position: absolute;
   width: 64%;
-  padding: 5px;
-  height: 146px;
+  padding: 1px;
+  height: 34px;
 }
 
 page-login ion-content {
@@ -25855,18 +25857,22 @@ page-process ion-header ion-grid ion-row ion-col:before {
   margin-top: -25px;
 }
 
-page-process ion-header .pillToolbar .toolbar-background {
-  background: transparent !important;
+page-process ion-header ion-toolbar .toolbar-background {
+  background: url(../assets/imgs/back-button-bg.png) !important;
 }
 
-page-process ion-header .pillToolbar .toolbar-title {
-  color: white !important;
-  white-space: pre-line !important;
+page-process ion-header ion-toolbar .button[icon-only] {
+  color: white;
 }
 
-page-process ion-header .shodowImg img {
-  width: 100%;
-  height: 21px;
+page-process ion-header ion-toolbar .toolbar-title {
+  color: white;
+  font-size: 1.2rem !important;
+  white-space: normal;
+}
+
+page-process ion-content ion-slides section .mar-top {
+  margin-top: 10%;
 }
 
 page-process ion-content ion-slides ion-list-header {
@@ -25884,6 +25890,10 @@ page-process ion-content ion-slides .inputCol {
   background: white !important;
   padding: 0px !important;
   border-radius: 5px;
+}
+
+page-process ion-content ion-slides .inputCol .text-input::-webkit-input-placeholder {
+  color: black;
 }
 
 page-process ion-content ion-slides ion-row {
@@ -25910,10 +25920,6 @@ page-process ion-content ion-slides .noticeBtn p {
   width: 100%;
   color: white;
   font-size: 13px;
-}
-
-page-process ion-content ion-slides .noticeBtn img {
-  width: 80% !important;
 }
 
 page-process ion-content ion-slides ion-item {
