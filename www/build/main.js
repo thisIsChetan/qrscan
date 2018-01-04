@@ -57,7 +57,7 @@ var LoginPage = (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/avinash/ionic/New/qrscan/src/pages/login/login.html"*/'\n<ion-content padding>\n  \n\n  <div class="container">\n\n      <ion-list no-lines>\n        <ion-item>\n          <ion-label>\n            Please enter the Activation Code provided by the HCPs to start using the App:\n          </ion-label>\n        </ion-item>\n\n        <ion-grid>\n          <ion-row>\n            <ion-col col-10>\n              <ion-input class="text-input" [(ngModel)]="user.pass" clearInput type="password" placeholder="Access PIN/Passcode" name="pass"></ion-input>\n            </ion-col>\n            <ion-col col-2>\n              <button ion-button clear small float-right (click)="navigateToProcess()">\n                  <ion-icon name="search"></ion-icon>\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-list>\n   \n  </div>\n  <div class="btnIcon">\n    <img src="assets/imgs/menu.png">\n  </div>\n\n</ion-content>\n\n<ion-footer no-border>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-3>\n        <img src="assets/imgs/lilly-logo.png">\n      </ion-col>\n      <ion-col col-7>\n        <span>\n          聯絡我們\n歡迎您寶貴的意見, 禮來公司關心您的健康。台北市復興北路365號11樓\n電話： (02)27152950\n        </span>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-footer>'/*ion-inline-end:"/Users/avinash/ionic/New/qrscan/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/Avinash/BarcodeCialis/Project/qrscan/src/pages/login/login.html"*/'\n<ion-content padding>\n  \n\n  <div class="container">\n\n      <ion-list no-lines>\n        <ion-item>\n          <ion-label>\n            Please enter the Activation Code provided by the HCPs to start using the App:\n          </ion-label>\n        </ion-item>\n\n        <ion-grid>\n          <ion-row>\n            <ion-col col-10>\n              <ion-input class="text-input" [(ngModel)]="user.pass" clearInput type="password" placeholder="Access PIN/Passcode" name="pass"></ion-input>\n            </ion-col>\n            <ion-col col-2>\n              <button ion-button clear small float-right (click)="navigateToProcess()">\n                  <ion-icon name="search"></ion-icon>\n              </button>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-list>\n   \n  </div>\n  <div class="btnIcon">\n    <img src="assets/imgs/menu.png">\n  </div>\n\n</ion-content>\n\n<ion-footer no-border>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-3>\n        <img src="assets/imgs/lilly-logo.png">\n      </ion-col>\n      <ion-col col-7>\n        <span>\n          聯絡我們\n歡迎您寶貴的意見, 禮來公司關心您的健康。台北市復興北路365號11樓\n電話： (02)27152950\n        </span>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-footer>'/*ion-inline-end:"/Users/Avinash/BarcodeCialis/Project/qrscan/src/pages/login/login.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__providers_auth_service_auth_service__["a" /* AuthServiceProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
@@ -93,11 +93,11 @@ webpackEmptyAsyncContext.id = 111;
 
 var map = {
 	"../pages/login/login.module": [
-		280,
+		281,
 		2
 	],
 	"../pages/process/process.module": [
-		281,
+		280,
 		0
 	],
 	"../pages/terms-and-conditions/terms-and-conditions.module": [
@@ -128,7 +128,7 @@ module.exports = webpackAsyncContext;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthServiceProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -233,7 +233,7 @@ var BarcodeProvider = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentsModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_view_alert_view__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_view_alert_view__ = __webpack_require__(250);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(31);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -295,7 +295,7 @@ var TermsAndConditionsPage = (function () {
     };
     TermsAndConditionsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-terms-and-conditions',template:/*ion-inline-start:"/Users/avinash/ionic/New/qrscan/src/pages/terms-and-conditions/terms-and-conditions.html"*/'<!--\n  Generated template for the TermsAndConditionsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>TermsAndConditions</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/avinash/ionic/New/qrscan/src/pages/terms-and-conditions/terms-and-conditions.html"*/,
+            selector: 'page-terms-and-conditions',template:/*ion-inline-start:"/Users/Avinash/BarcodeCialis/Project/qrscan/src/pages/terms-and-conditions/terms-and-conditions.html"*/'<!--\n  Generated template for the TermsAndConditionsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>TermsAndConditions</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Avinash/BarcodeCialis/Project/qrscan/src/pages/terms-and-conditions/terms-and-conditions.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], TermsAndConditionsPage);
@@ -381,8 +381,8 @@ var AppModule = (function () {
                     }
                 }, {
                     links: [
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/process/process.module#ProcessPageModule', name: 'ProcessPage', segment: 'process', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/terms-and-conditions/terms-and-conditions.module#TermsAndConditionsPageModule', name: 'TermsAndConditionsPage', segment: 'terms-and-conditions', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -412,7 +412,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 251:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -456,7 +456,7 @@ var AlertViewComponent = (function () {
     ], AlertViewComponent.prototype, "buttonClick", void 0);
     AlertViewComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'alert-view',template:/*ion-inline-start:"/Users/avinash/ionic/New/qrscan/src/components/alert-view/alert-view.html"*/'<!-- Generated template for the AlertViewComponent component -->\n<section>\n    <div [innerHTML]="text">\n    </div>\n    <div class="btn" (click)="buttonclick()">\n            {{buttonText}} \n    </div>\n    <!-- <button ion-button  block small> </button> -->\n</section>\n\n'/*ion-inline-end:"/Users/avinash/ionic/New/qrscan/src/components/alert-view/alert-view.html"*/
+            selector: 'alert-view',template:/*ion-inline-start:"/Users/Avinash/BarcodeCialis/Project/qrscan/src/components/alert-view/alert-view.html"*/'<!-- Generated template for the AlertViewComponent component -->\n<section>\n    <div [innerHTML]="text">\n    </div>\n    <div class="btn" (click)="buttonclick()">\n            {{buttonText}} \n    </div>\n    <!-- <button ion-button  block small> </button> -->\n</section>\n\n'/*ion-inline-end:"/Users/Avinash/BarcodeCialis/Project/qrscan/src/components/alert-view/alert-view.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], AlertViewComponent);
@@ -502,7 +502,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/avinash/ionic/New/qrscan/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/avinash/ionic/New/qrscan/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/Avinash/BarcodeCialis/Project/qrscan/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Avinash/BarcodeCialis/Project/qrscan/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
