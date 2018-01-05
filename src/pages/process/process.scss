@@ -71,25 +71,30 @@ page-process {
             }
         }
 
-        .pillToolbar{
-            .toolbar-background{
-            background: transparent !important;
-            }
-            .toolbar-title{
-                color: white !important;
-                white-space: pre-line !important
-            }
+        ion-toolbar{
+        .toolbar-background{
+            background: url(../assets/imgs/back-button-bg.png) !important;
         }
-        .shodowImg{
-            img{
-                width: 100%;
-                height: 21px;
-            }
+
+        .button[icon-only]{
+            color: white;
         }
+        .toolbar-title{
+            color: white;
+            font-size: 1.2rem !important;
+            white-space: normal;           
+        }
+    }
+       
     }
 
     ion-content{
         ion-slides {
+            section {
+                .mar-top{
+                    margin-top: 10%;
+                }
+            }
             ion-list-header{
                 background: transparent !important;
                 color:white !important;
@@ -99,10 +104,29 @@ page-process {
                     color: white;
                 }
             }
+            
             .inputCol {
                 background: white !important;
                 padding: 0px !important;
                 border-radius: 5px;
+
+                // .text-input::-moz-placeholder {
+                //     color: black;
+                //     font-size: 10px;
+                //     white-space: pre-line;
+                //   }
+                  
+                //   .text-input:-ms-input-placeholder {
+                //     color: black;
+                //     font-size: 10px;
+                //     white-space: pre-line;
+                //   }
+                  
+                  .text-input::-webkit-input-placeholder {
+                    color: black;
+          
+                    // white-space: pre-line;
+                  }
              }
              ion-row{
                  margin: 5%;
@@ -126,9 +150,9 @@ page-process {
                 color: white;
                 font-size: 13px;
                }
-               img{
-                   width: 80% !important;
-               }
+            //    img{
+            //        width: 80% !important;
+            //    }
             }
             ion-item{
                 background: transparent !important;

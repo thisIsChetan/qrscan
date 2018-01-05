@@ -21,10 +21,10 @@
       <ion-col col-3 class="index-1" [ngClass]="{'active-header' : currentIndex == 3 }">Complete Validation</ion-col>
     </ion-row>
   </ion-grid>
-  <div class="shodowImg">
+  <!-- <div class="shodowImg">
     <img src="assets/imgs/step-shodow.png">
-  </div>
-  <!-- <div *ngIf="view == '2.3'" class="pillToolbar">
+  </div> -->
+  <ion-toolbar *ngIf="view == '2.3'">
     <button ion-button icon-only left clear (click)="changeView('2.1')">
       <ion-icon name="arrow-back"></ion-icon>
     </button>
@@ -32,11 +32,13 @@
       <span *ngIf="packageType == '5mg'">Cialis 5mg Package Authentication Guide</span>
       <span *ngIf="packageType == '20mg'">Cialis 20mg Package Authentication Guide</span>
     </ion-title>
-  </div> -->
+
+  </ion-toolbar>
+
 </ion-header>
 
 
-<ion-content>
+<ion-content padding>
   <ion-slides (ionSlideDidChange)="slideChanged()">
     <ion-slide>
       <ion-list radio-group [(ngModel)]="purchaseFrom" no-lines>
@@ -52,7 +54,7 @@
               </div>
             </ion-col>
             <ion-col col-4>
-              <span>Hospital</span>
+              <span (click)="radioBtn('hospital')">Hospital</span>
             </ion-col>
             <ion-col class="inputCol">
               <ion-input type="text" placeholder="Please enter the name of the establishment (optional)"></ion-input>
@@ -66,7 +68,7 @@
               </div>
             </ion-col>
             <ion-col col-4>
-              <span>Pharmacy</span>
+              <span (click)="radioBtn('pharmacy')">Pharmacy</span>
             </ion-col>
             <ion-col class="inputCol">
               <ion-input type="text" placeholder="Please enter the name of the establishment (optional)"></ion-input>
@@ -80,7 +82,7 @@
               </div>
             </ion-col>
             <ion-col col-4>
-              <span>Other</span>
+              <span (click)="radioBtn('other')">Other</span>
             </ion-col>
             <ion-col class="inputCol">
               <ion-input type="text" placeholder="Please enter the name of the establishment (optional)"></ion-input>
@@ -126,7 +128,7 @@
                 </div>
               </ion-col>
               <ion-col col-5>
-                <span>Cialis 5mg</span>
+                <span (click)="radioBtn('5mg')">Cialis 5mg</span>
               </ion-col>
             </ion-row>
             <ion-row>
@@ -137,7 +139,7 @@
                 </div>
               </ion-col>
               <ion-col col-5>
-                <span>Cialis 20mg</span>
+                <span (click)="radioBtn('20mg')">Cialis 20mg</span>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -151,20 +153,8 @@
       </section>
 
       <section *ngIf="view == '2.3'">
-        <div class="pillDiv">
-          <p>
-            <span *ngIf="packageType == '5mg'">Cialis 5mg Package Authentication Guide</span>
-            <span *ngIf="packageType == '20mg'">Cialis 20mg Package Authentication Guide</span>
-          </p>
-          <button ion-button icon-only left clear (click)="changeView('2.1')">
-            <ion-icon name="arrow-back"></ion-icon>
-          </button>
-          <img src="assets/imgs/back-button-bg.png">
-        </div>
-        <div class="pillImage">
-          <img *ngIf="packageType == '5mg'" src="../assets/imgs/pill5.png">
-          <img *ngIf="packageType == '20mg'" src="../assets/imgs/pill20.png">
-        </div>
+          <img *ngIf="packageType == '5mg'" src="assets/imgs/pill5.png" >
+          <img *ngIf="packageType == '20mg'" src="assets/imgs/pill20.png" >
         <div class="noticeBtn" tappable (click)="changeView('2.4')">
           <p> Notice!
             <br> Cialis is not distributed and sold in online shops.
@@ -187,7 +177,7 @@
                 </div>
               </ion-col>
               <ion-col >
-                <span>All checkpoint passed</span>
+                <span (click)="radioBtn('ALL')">All checkpoint passed</span>
               </ion-col>
             </ion-row>
             <ion-row>
@@ -198,7 +188,7 @@
                   </div>
                 </ion-col>
                 <ion-col >
-                  <span>Some didn’t match correctly</span>
+                  <span (click)="radioBtn('SOME')">Some didn’t match correctly</span>
                 </ion-col>
               </ion-row>
               <ion-row>
@@ -209,7 +199,7 @@
                     </div>
                   </ion-col>
                   <ion-col >
-                    <span>Some didn’t match correctly</span>
+                    <span (click)="radioBtn('NOT_SURE')">Some didn’t match correctly</span>
                   </ion-col>
                 </ion-row>
           </ion-grid>

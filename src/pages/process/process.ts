@@ -60,12 +60,12 @@ export class ProcessPage {
     let _currentIndex = this.slides.getActiveIndex();
     if(_currentIndex == 1){
       this.view = '1.1';
-      this.barcode.showAlert();
-      // this.showBarcode();
+      //this.barcode.showAlert();
+       this.showBarcode();
     }else if(_currentIndex == 2){
       this.view = "2.1";
     }else{
-      this.view = "";
+     this.currentIndex=0;
     }
     
   }
@@ -83,10 +83,16 @@ export class ProcessPage {
   //Slide 1
   resText:string;
   showBarcode(){
-    //for a timing committed by avinash
-    // this.barcode.scan().then((res)=>{
-    //   this.changeView('1.2')
-    // })
+    this.barcode.scan().then((res)=>{
+      if(res){
+        this.changeView('1.2')
+      }
+      else{
+        this.slides.slideTo(0, 500);
+      }
+      
+      
+    })
   }
   showBarcodeRes(){
     this.view = "1.3";
