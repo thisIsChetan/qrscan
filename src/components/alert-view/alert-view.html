@@ -1,8 +1,9 @@
 <!-- Generated template for the AlertViewComponent component -->
 <section>
-    <div [innerHTML]="text">
+    <div class="alertText">
+        <p [innerHTML]="text"></p>
     </div>
-    <div class="btn" (click)="buttonclick()" >
+    <div class="btn" (click)="buttonclick()">
             {{buttonText}} 
     </div>
     <!-- <button ion-button  block small> </button> -->
