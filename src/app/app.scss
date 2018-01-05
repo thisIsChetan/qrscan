@@ -18,3 +18,20 @@ ion-content{
     background:url("../assets/imgs/bg.png");
     background-size: contain;
 }
+ion-icon{
+    
+    &[class*="li-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        width: 1em;
+        height: 1em;
+    }
+
+    &[class*="li-select"] {
+        mask-image: url(../assets/imgs/redio-button-click.png);    
+    }
+}

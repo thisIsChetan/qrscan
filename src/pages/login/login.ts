@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
-import { Cordova } from '@ionic-native/core';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,12 +17,17 @@ import { Cordova } from '@ionic-native/core';
 })
 export class LoginPage {
 
-  password: string;
+  user: any;
+  service:any;
 
-  constructor( public navCtrl: NavController,
+  constructor(public navCtrl: NavController,
                public navParams: NavParams, 
-               public authServiceProvider: AuthServiceProvider,
-               private platform: Platform ) {
+               public authServiceProvider: AuthServiceProvider) {
+    console.log(authServiceProvider.http);
+    this.user = {
+      pass: ''
+    };
+  this.service=authServiceProvider;
   }
 
   ionViewDidLoad() {
@@ -31,21 +35,20 @@ export class LoginPage {
   }
 
   navigateToProcess() {
-    if(this.platform.is('core') || this.platform.is('mobileweb')) {
-      this.navCtrl.push("ProcessPage");
-    }else{
-      this.authServiceProvider.isValid(this.password).subscribe((data)=>{
-        if(data){
-          if(data.status == "OK"){
-           this.navCtrl.push("ProcessPage");
-          }
-          else{
-            alert("Wrong Password");
-          }
-        }
-      })  
-    }
-  
+    this.navCtrl.push("ProcessPage");
+    //this.navCtrl.push("ProcessPage");
+  //  this.service.isValid(this.user.pass).then(data => {
+  //    alert(data.status);
+  //   if(data){
+  //     if(data.status == "OK"){
+  //      this.navCtrl.push("ProcessPage");
+  //     }
+  //     else{
+  //       alert("Wrong Password");
+  //     }
+  //   }
+  // })
+    
   }
 }
 

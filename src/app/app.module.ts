@@ -16,7 +16,6 @@ import { BarcodeProvider } from '../providers/barcode/barcode';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ContentProvider } from '../providers/content/content'; 
 
-
 @NgModule({
   declarations: [
     MyApp,
@@ -49,8 +48,7 @@ import { ContentProvider } from '../providers/content/content';
     AuthServiceProvider,
     Camera,
     BarcodeProvider,
-    BarcodeScanner,
-    ContentProvider
+    BarcodeScanner
   ]
 })
 export class AppModule { }
