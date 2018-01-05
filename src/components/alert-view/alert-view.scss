@@ -1,28 +1,35 @@
 alert-view {
     section{
         background: url(../assets/imgs/popup-bg.png);
-        background-size: contain;
         background-repeat: no-repeat;
-        max-width: 90%;
         margin: auto;
+        background-size: 100% 100%;
         padding: 22px;
         height: auto;
-        min-height: 265px;
         position: relative;
-        div {
-            color: white !important;
+        max-width: 388px;
+
+        .alertText{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 68px;
+            p{
+                color: white;
+            }
         }
         .btn{
             background: url(../assets/imgs/popup-button-bg.png);
             background-size: contain;
             background-repeat: no-repeat;
-            /* top: 75%; */
-            bottom: 60px;
+            bottom: 32px;
             right: 16%;
             position: absolute;
             width: 64%;
-            padding: 1px;
+            padding: 6px;
             height: 34px;
+            background-size: 100% 100%;
+            color: white;
     }
 }
 }

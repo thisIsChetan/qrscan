@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 import { BarcodeProvider } from '../../providers/barcode/barcode'
-import { ContentProvider } from '../../providers/content/content'
 /**
  * Generated class for the ProcessPage page.
  *
@@ -30,10 +29,9 @@ export class ProcessPage {
     src:["assets/imgs/01-Step.png","assets/imgs/02-Step.png",
           "assets/imgs/03-Step.png","assets/imgs/04-Step.png"]};
   
-  constructor( public navCtrl: NavController,
-               public navParams: NavParams,
-               private barcode: BarcodeProvider,
-               private contentProvider: ContentProvider) {
+  constructor(public navCtrl: NavController,
+             public navParams: NavParams,
+              private barcode: BarcodeProvider) {
   console.log("images"+this.images.src[this.currentIndex]);
   this.radioValue="hospital";
   this.packageType="5mg";
@@ -62,12 +60,12 @@ export class ProcessPage {
     let _currentIndex = this.slides.getActiveIndex();
     if(_currentIndex == 1){
       this.view = '1.1';
-      //this.barcode.showAlert();
-       this.showBarcode();
+      this.barcode.showAlert();
+      // this.showBarcode();
     }else if(_currentIndex == 2){
       this.view = "2.1";
     }else{
-     this.currentIndex=0;
+      this.view = "";
     }
     
   }
@@ -85,36 +83,14 @@ export class ProcessPage {
   //Slide 1
   resText:string;
   showBarcode(){
-    this.barcode.scan().then((data)=>{
-      this.barcode.validate(data).subscribe((isValid)=>{
-        if(isValid){
-          this.showBarcodeRes("Code Validated!<br>Proceed to next step…");
-        }
-        else{
-          this.showBarcodeRes(`Product authentication failed.<br> 
-          Kindly contact numbers below to report the counterfeit product.<br>         
-          Please contact support center during normal office hours: 0809-009-369<br> 
-          Or Toll-free Number 0800-285-000`);
-        }
-      },(err)=>{
-        this.showBarcodeRes(`System encountered some error while validating.<br> 
-        Please contact support center during normal office hours: 0809-009-369<br> 
-        Or Toll-free Number 0800-285-000`);
-      })      
-    })
+    //for a timing committed by avinash
+    // this.barcode.scan().then((res)=>{
+    //   this.changeView('1.2')
+    // })
   }
-  showBarcodeRes(msg: string){
-    this.resText = msg;
-    this.view = "1.3"; 
+  showBarcodeRes(){
+    this.view = "1.3";
+    this.resText = "Code Validated!<br>Proceed to next step…"
   }
 
-  medImgURL: string;
-  getImg(img){
-    console.log("SDFGGFGDFGDFGDFSGDFSGDSFGDFSGDFGDFGDF", img)
-    this.contentProvider.getImgURL(img).subscribe((url)=>{
-      this.medImgURL = url;
-      console.log("SDFGGFGDFGDFGDFSGDFSGDSFGDFSGDFGDFGDF", url)
-      this.changeView('2.3')
-    })
-  }
 }
