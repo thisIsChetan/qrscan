@@ -14,6 +14,7 @@ import { TermsAndConditionsPage } from '../pages/terms-and-conditions/terms-and-
 import { ComponentsModule } from '../components/components.module'
 import { BarcodeProvider } from '../providers/barcode/barcode';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ContentProvider } from '../providers/content/content'; 
 
 @NgModule({
   declarations: [
