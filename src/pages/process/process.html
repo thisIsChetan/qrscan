@@ -101,11 +101,12 @@
 
     <ion-slide>
       <section *ngIf="view == '1.1'">
-        <h2>Slide 2</h2>
+        <h2>Barcode Scanning in progress...</h2>
         <button ion-button (click)="changeView('1.2')"></button>
       </section>
       <section *ngIf="view == '1.2'">
-        <alert-view [text]="'One moment…<br>System Validation In Progress…'" [buttonText]="'ok'" (buttonClick)="showBarcodeRes()"></alert-view>
+        <alert-view [text]="'One moment…<br>System Validation In Progress…'" [buttonText]="'OK'"
+          (buttonClick)="changeView('1.3')"></alert-view>
       </section>
       <section *ngIf="view == '1.3'">
         <alert-view [text]="resText" [buttonText]="'OK'" (buttonClick)="nextSlide()"></alert-view>
@@ -149,12 +150,14 @@
 
       <section *ngIf="view == '2.2'">
         <alert-view [text]="'Please follow the product validation image guide presented to verify the packaging.'" [buttonText]="'OK'"
-          (buttonClick)="changeView('2.3')"></alert-view>
+          (buttonClick)="getImg(packageType)"></alert-view>
       </section>
 
       <section *ngIf="view == '2.3'">
-          <img *ngIf="packageType == '5mg'" src="assets/imgs/pill5.png" >
-          <img *ngIf="packageType == '20mg'" src="assets/imgs/pill20.png" >
+          <!-- <img *ngIf="packageType == '5mg'" src="assets/imgs/pill5.png" >
+          <img *ngIf="packageType == '20mg'" src="assets/imgs/pill20.png" > -->
+          <img  [src]="medImgURL" >
+          
         <div class="noticeBtn" tappable (click)="changeView('2.4')">
           <p> Notice!
             <br> Cialis is not distributed and sold in online shops.
