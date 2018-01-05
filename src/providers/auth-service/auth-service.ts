@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
+import { GLOBALS } from '../../data/globals'
 
 /*
   Generated class for the AuthServiceProvider provider.
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-let apiUrl='https://buit-ibu-tw-cialis-id-dev.herokuapp.com/api/app_authentication/';
 
 @Injectable()
 export class AuthServiceProvider {
@@ -17,33 +17,21 @@ export class AuthServiceProvider {
   }
 
   isValid(credentials){
-    return new Promise((resolve,reject) => {
+
       // let headers= new Headers();
       // headers.append('Content-Type', 'application/json');
       // headers.append("Accept", 'application/json');
       // headers.append('Access-Control-Allow-Origin', '*');
-
-      let headers = {
+      let headers = new Headers({ 
         'Content-Type': 'application/json'
-    };
-
-      let data = JSON.stringify({
+     });
+      let data = {
         app_authentication_code: credentials
-      });
-
-      this.http.post(apiUrl, data)
-      //this.http.post(apiUrl+credentials,JSON.stringify(credentials),{ headers: headers })
-      .subscribe(res => {
-        console.log(res.json());
-        resolve(res.json());
-        
-      }, (err) => {
-        console.log(err);
-        reject(err);
-
       }
-    )
-    });
+
+      return this.http.post(GLOBALS.AUTH_URL, data,{headers : headers})
+      .map(res => res.json())
+
   }
 
 
